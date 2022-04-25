@@ -153,5 +153,6 @@ class tracer:
             losses['signals'].append([loss_dB, delay])
             total_linear += np.power(10, -loss_dB/10)
 
-        losses['total_dB'] = -10*np.log10(total_linear)
+        if total_linear is not 0:
+            losses['total_dB'] = -10*np.log10(total_linear)
         return losses

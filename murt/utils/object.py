@@ -7,6 +7,8 @@ COMPONENT_PATH = os.path.join(sys.prefix, "murt-assets")
 
 class Object():
     def __init__(self, object_name, file_path=None, directory_path=None):
+        self.triangles = []
+        self.vertices = []
         self.object_name = object_name
         self.scale, self.translate, self.rotate = \
             [1, 1, 1], [0, 0, 0], [0, 0, 0]

@@ -25,7 +25,7 @@ def install():
                                   extra_compile_args=['-std=c++17'])
     setup(
         name="murt",
-        version="0.0.6",
+        version="0.0.7",
         author="Supawat Tamsri",
         python_requires='>=3.7.10',
         author_email="contact@supawat.dev",
@@ -38,7 +38,8 @@ def install():
                   'murt.engine', 'murt.window'],
         ext_modules=[core_module, calculator_module],
         data_files=data_files,
-        include_package_data=True
+        include_package_data=True,
+        options={'bdist_wheel':{'universal':'1'}}
     )
 
 
