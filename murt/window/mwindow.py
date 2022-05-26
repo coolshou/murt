@@ -14,7 +14,8 @@ configure_logging(
     formatter=logging.Formatter('%(name)s-%(levelname)s: %(message)s')
 )
 
-COMPONENT_PATH = os.path.join(sys.prefix, "murt-assets")
+#COMPONENT_PATH = os.path.join(sys.prefix, "murt-assets")
+COMPONENT_PATH = os.path.join(sys.prefix, "local", "murt-assets")
 
 display_objects = {
     'ground': Wavefront(os.path.join(COMPONENT_PATH, "ground.obj"), collect_faces=True),
