@@ -39,7 +39,8 @@ def install():
         ext_modules=[core_module, calculator_module],
         data_files=data_files,
         include_package_data=True,
-        options={'bdist_wheel':{'universal':'1'}}
+        options={'bdist_wheel':{'universal':'1'}},
+         install_requires=["pandas", "pyglet", "pywavefront"]
     )
 
 
