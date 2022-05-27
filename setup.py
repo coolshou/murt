@@ -1,7 +1,11 @@
 from setuptools import setup, Extension
 import numpy as np
 import os
-
+import platform
+if platform.system() == "Windows":
+    CFLAGS="/std:c++20"
+else:
+    CFLAGS="-std=c++17"
 
 data_files = [
     ('murt-assets', [
@@ -17,15 +21,15 @@ def install():
                             sources=['murt/core/core.cpp'],
                             include_dirs=[np.get_include()],
                             language='c++',
-                            extra_compile_args=['-std=c++17'])
+                            extra_compile_args=[CFLAGS])
 
     calculator_module = Extension('murt.calculator',
                                   sources=['murt/core/calculator.cpp'],
                                   language='c++',
-                                  extra_compile_args=['-std=c++17'])
+                                  extra_compile_args=[CFLAGS])
     setup(
         name="murt",
-        version="0.0.7",
+        version="0.0.8",
         author="Supawat Tamsri",
         python_requires='>=3.7.10',
         author_email="contact@supawat.dev",

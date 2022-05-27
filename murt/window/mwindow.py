@@ -6,6 +6,7 @@ import logging
 from pyglet.window import Window, key
 from pyglet.gl import *
 from pywavefront import visualization, Wavefront, configure_logging
+import platform
 
 from murt.utils.object import Object
 
@@ -13,9 +14,10 @@ configure_logging(
     logging.ERROR,
     formatter=logging.Formatter('%(name)s-%(levelname)s: %(message)s')
 )
-
-#COMPONENT_PATH = os.path.join(sys.prefix, "murt-assets")
-COMPONENT_PATH = os.path.join(sys.prefix, "local", "murt-assets")
+if platform.system() == "Windows":
+    COMPONENT_PATH = os.path.join(sys.prefix, "murt-assets")
+else:
+    COMPONENT_PATH = os.path.join(sys.prefix, "local", "murt-assets")
 
 display_objects = {
     'ground': Wavefront(os.path.join(COMPONENT_PATH, "ground.obj"), collect_faces=True),
