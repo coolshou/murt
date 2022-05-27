@@ -329,9 +329,9 @@ static PyTypeObject RayTracerType = {
 
 static PyModuleDef murtcore_module = {
     PyModuleDef_HEAD_INIT,
-    .m_name = "murtcore",
-    .m_doc = "MURT Core Tracer", // TODO[]: To be documented.
-    .m_size = -1,
+    "murtcore",
+    "MURT Core Tracer", // TODO[]: To be documented.
+    -1,
 };
 
 PyMODINIT_FUNC

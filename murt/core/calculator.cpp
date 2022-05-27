@@ -111,10 +111,10 @@ static PyMethodDef CalculatorFunctions[] = {
 
 static PyModuleDef CalculatorModule = {
     PyModuleDef_HEAD_INIT,
-    .m_name = "calculator",
-    .m_doc = "The path loss calculator module",
-    .m_size = -1,
-    .m_methods = CalculatorFunctions,
+    "calculator",
+    "The path loss calculator module",
+    -1,
+    CalculatorFunctions,
 };
 
 PyMODINIT_FUNC PyInit_calculator(void)
